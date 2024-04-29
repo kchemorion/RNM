@@ -73,11 +73,27 @@
               <times/>
               <apply>
                 <divide/>
-                <ci> BMAL1 </ci>
+                <apply>
+                  <divide/>
+                  <ci> BMAL1 </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> BMAL1 </ci>
+                  </apply>
+                </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> BMAL1 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> BMAL1 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> BMAL1 </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <cn type="integer"> 1 </cn>
@@ -96,14 +112,46 @@
                 <divide/>
                 <apply>
                   <plus/>
-                  <ci> DBP </ci>
-                  <ci> NFIL3 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> DBP </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> DBP </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> NFIL3 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> NFIL3 </ci>
+                    </apply>
+                  </apply>
                 </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> DBP </ci>
-                  <ci> NFIL3 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> DBP </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> DBP </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> NFIL3 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> NFIL3 </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <cn type="integer"> 1 </cn>
@@ -122,16 +170,64 @@
                 <divide/>
                 <apply>
                   <plus/>
-                  <ci> ROR </ci>
-                  <ci> TGF_beta </ci>
-                  <ci> IL_1RA </ci>
+                  <apply>
+                    <divide/>
+                    <ci> ROR </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> ROR </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> TGF_beta </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> TGF_beta </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> IL_1RA </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IL_1RA </ci>
+                    </apply>
+                  </apply>
                 </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> ROR </ci>
-                  <ci> TGF_beta </ci>
-                  <ci> IL_1RA </ci>
+                  <apply>
+                    <divide/>
+                    <ci> ROR </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> ROR </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> TGF_beta </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> TGF_beta </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> IL_1RA </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IL_1RA </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <apply>
@@ -202,11 +298,27 @@
               <times/>
               <apply>
                 <divide/>
-                <ci> ROR </ci>
+                <apply>
+                  <divide/>
+                  <ci> ROR </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> ROR </ci>
+                  </apply>
+                </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> ROR </ci>
+                  <apply>
+                    <divide/>
+                    <ci> ROR </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> ROR </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <cn type="integer"> 1 </cn>
@@ -225,14 +337,46 @@
                 <divide/>
                 <apply>
                   <plus/>
-                  <ci> BMAL1 </ci>
-                  <ci> IL_1RA </ci>
+                  <apply>
+                    <divide/>
+                    <ci> BMAL1 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> BMAL1 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> IL_1RA </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IL_1RA </ci>
+                    </apply>
+                  </apply>
                 </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> BMAL1 </ci>
-                  <ci> IL_1RA </ci>
+                  <apply>
+                    <divide/>
+                    <ci> BMAL1 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> BMAL1 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> IL_1RA </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IL_1RA </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <apply>
@@ -263,16 +407,64 @@
                 <divide/>
                 <apply>
                   <plus/>
-                  <ci> BMAL1 </ci>
-                  <ci> CREB </ci>
-                  <ci> IL_1RA </ci>
+                  <apply>
+                    <divide/>
+                    <ci> BMAL1 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> BMAL1 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> CREB </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> CREB </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> IL_1RA </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IL_1RA </ci>
+                    </apply>
+                  </apply>
                 </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> BMAL1 </ci>
-                  <ci> CREB </ci>
-                  <ci> IL_1RA </ci>
+                  <apply>
+                    <divide/>
+                    <ci> BMAL1 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> BMAL1 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> CREB </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> CREB </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> IL_1RA </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IL_1RA </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <apply>
@@ -301,11 +493,27 @@
               <times/>
               <apply>
                 <divide/>
-                <ci> BMAL1 </ci>
+                <apply>
+                  <divide/>
+                  <ci> BMAL1 </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> BMAL1 </ci>
+                  </apply>
+                </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> BMAL1 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> BMAL1 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> BMAL1 </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <apply>
@@ -350,11 +558,27 @@
               <times/>
               <apply>
                 <divide/>
-                <ci> FBXL3 </ci>
+                <apply>
+                  <divide/>
+                  <ci> FBXL3 </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> FBXL3 </ci>
+                  </apply>
+                </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> FBXL3 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> FBXL3 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> FBXL3 </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <cn type="integer"> 1 </cn>
@@ -411,14 +635,46 @@
                 <divide/>
                 <apply>
                   <plus/>
-                  <ci> p38 </ci>
-                  <ci> akt1 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> p38 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> p38 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> akt1 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> akt1 </ci>
+                    </apply>
+                  </apply>
                 </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> p38 </ci>
-                  <ci> akt1 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> p38 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> p38 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> akt1 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> akt1 </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <cn type="integer"> 1 </cn>
@@ -437,14 +693,46 @@
                 <divide/>
                 <apply>
                   <plus/>
-                  <ci> cJun </ci>
-                  <ci> beta_catenin </ci>
+                  <apply>
+                    <divide/>
+                    <ci> cJun </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> cJun </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> beta_catenin </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> beta_catenin </ci>
+                    </apply>
+                  </apply>
                 </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> cJun </ci>
-                  <ci> beta_catenin </ci>
+                  <apply>
+                    <divide/>
+                    <ci> cJun </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> cJun </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> beta_catenin </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> beta_catenin </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <cn type="integer"> 1 </cn>
@@ -463,18 +751,82 @@
                 <divide/>
                 <apply>
                   <plus/>
-                  <ci> TGF_beta </ci>
-                  <ci> GDF5 </ci>
-                  <ci> IL_1RA </ci>
-                  <ci> cJun </ci>
+                  <apply>
+                    <divide/>
+                    <ci> TGF_beta </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> TGF_beta </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> GDF5 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> GDF5 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> IL_1RA </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IL_1RA </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> cJun </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> cJun </ci>
+                    </apply>
+                  </apply>
                 </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> TGF_beta </ci>
-                  <ci> GDF5 </ci>
-                  <ci> IL_1RA </ci>
-                  <ci> cJun </ci>
+                  <apply>
+                    <divide/>
+                    <ci> TGF_beta </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> TGF_beta </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> GDF5 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> GDF5 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> IL_1RA </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IL_1RA </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> cJun </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> cJun </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <apply>
@@ -503,11 +855,27 @@
               <times/>
               <apply>
                 <divide/>
-                <ci> IL_1RA </ci>
+                <apply>
+                  <divide/>
+                  <ci> IL_1RA </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> IL_1RA </ci>
+                  </apply>
+                </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> IL_1RA </ci>
+                  <apply>
+                    <divide/>
+                    <ci> IL_1RA </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IL_1RA </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <apply>
@@ -538,20 +906,100 @@
                 <divide/>
                 <apply>
                   <plus/>
-                  <ci> TGF_beta </ci>
-                  <ci> GDF5 </ci>
-                  <ci> IL_1RA </ci>
-                  <ci> cJun </ci>
-                  <ci> Sox9 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> TGF_beta </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> TGF_beta </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> GDF5 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> GDF5 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> IL_1RA </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IL_1RA </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> cJun </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> cJun </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> Sox9 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> Sox9 </ci>
+                    </apply>
+                  </apply>
                 </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> TGF_beta </ci>
-                  <ci> GDF5 </ci>
-                  <ci> IL_1RA </ci>
-                  <ci> cJun </ci>
-                  <ci> Sox9 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> TGF_beta </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> TGF_beta </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> GDF5 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> GDF5 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> IL_1RA </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IL_1RA </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> cJun </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> cJun </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> Sox9 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> Sox9 </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <apply>
@@ -582,14 +1030,46 @@
                 <divide/>
                 <apply>
                   <plus/>
-                  <ci> TGF_beta </ci>
-                  <ci> cJun </ci>
+                  <apply>
+                    <divide/>
+                    <ci> TGF_beta </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> TGF_beta </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> cJun </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> cJun </ci>
+                    </apply>
+                  </apply>
                 </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> TGF_beta </ci>
-                  <ci> cJun </ci>
+                  <apply>
+                    <divide/>
+                    <ci> TGF_beta </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> TGF_beta </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> cJun </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> cJun </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <cn type="integer"> 1 </cn>
@@ -608,14 +1088,46 @@
                 <divide/>
                 <apply>
                   <plus/>
-                  <ci> MMP13 </ci>
-                  <ci> MMP3 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> MMP13 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> MMP13 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> MMP3 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> MMP3 </ci>
+                    </apply>
+                  </apply>
                 </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> MMP13 </ci>
-                  <ci> MMP3 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> MMP13 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> MMP13 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> MMP3 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> MMP3 </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <cn type="integer"> 1 </cn>
@@ -632,11 +1144,27 @@
               <times/>
               <apply>
                 <divide/>
-                <ci> IGF1 </ci>
+                <apply>
+                  <divide/>
+                  <ci> IGF1 </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> IGF1 </ci>
+                  </apply>
+                </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> IGF1 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> IGF1 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IGF1 </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <cn type="integer"> 1 </cn>
@@ -653,11 +1181,27 @@
               <times/>
               <apply>
                 <divide/>
-                <ci> TGF_beta </ci>
+                <apply>
+                  <divide/>
+                  <ci> TGF_beta </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> TGF_beta </ci>
+                  </apply>
+                </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> TGF_beta </ci>
+                  <apply>
+                    <divide/>
+                    <ci> TGF_beta </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> TGF_beta </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <cn type="integer"> 1 </cn>
@@ -687,11 +1231,27 @@
               <times/>
               <apply>
                 <divide/>
-                <ci> IL_10 </ci>
+                <apply>
+                  <divide/>
+                  <ci> IL_10 </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> IL_10 </ci>
+                  </apply>
+                </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> IL_10 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> IL_10 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IL_10 </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <cn type="integer"> 1 </cn>
@@ -721,11 +1281,27 @@
               <times/>
               <apply>
                 <divide/>
-                <ci> IL_4 </ci>
+                <apply>
+                  <divide/>
+                  <ci> IL_4 </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> IL_4 </ci>
+                  </apply>
+                </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> IL_4 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> IL_4 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IL_4 </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <cn type="integer"> 1 </cn>
@@ -769,18 +1345,82 @@
                 <divide/>
                 <apply>
                   <plus/>
-                  <ci> IL_1beta </ci>
-                  <ci> cJun </ci>
-                  <ci> JNK </ci>
-                  <ci> p38 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> IL_1beta </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IL_1beta </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> cJun </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> cJun </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> JNK </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> JNK </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> p38 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> p38 </ci>
+                    </apply>
+                  </apply>
                 </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> IL_1beta </ci>
-                  <ci> cJun </ci>
-                  <ci> JNK </ci>
-                  <ci> p38 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> IL_1beta </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IL_1beta </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> cJun </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> cJun </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> JNK </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> JNK </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> p38 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> p38 </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <cn type="integer"> 1 </cn>
@@ -797,11 +1437,27 @@
               <times/>
               <apply>
                 <divide/>
-                <ci> TGF_beta </ci>
+                <apply>
+                  <divide/>
+                  <ci> TGF_beta </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> TGF_beta </ci>
+                  </apply>
+                </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> TGF_beta </ci>
+                  <apply>
+                    <divide/>
+                    <ci> TGF_beta </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> TGF_beta </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <apply>
@@ -830,11 +1486,27 @@
               <times/>
               <apply>
                 <divide/>
-                <ci> IL_6 </ci>
+                <apply>
+                  <divide/>
+                  <ci> IL_6 </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> IL_6 </ci>
+                  </apply>
+                </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> IL_6 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> IL_6 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IL_6 </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <cn type="integer"> 1 </cn>
@@ -878,14 +1550,46 @@
                 <divide/>
                 <apply>
                   <plus/>
-                  <ci> IL_17 </ci>
-                  <ci> TNFR1 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> IL_17 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IL_17 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> TNFR1 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> TNFR1 </ci>
+                    </apply>
+                  </apply>
                 </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> IL_17 </ci>
-                  <ci> TNFR1 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> IL_17 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IL_17 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> TNFR1 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> TNFR1 </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <apply>
@@ -940,11 +1644,27 @@
               <times/>
               <apply>
                 <divide/>
-                <ci> IFN_gamma </ci>
+                <apply>
+                  <divide/>
+                  <ci> IFN_gamma </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> IFN_gamma </ci>
+                  </apply>
+                </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> IFN_gamma </ci>
+                  <apply>
+                    <divide/>
+                    <ci> IFN_gamma </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IFN_gamma </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <cn type="integer"> 1 </cn>
@@ -1002,11 +1722,27 @@
               <times/>
               <apply>
                 <divide/>
-                <ci> TNF </ci>
+                <apply>
+                  <divide/>
+                  <ci> TNF </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> TNF </ci>
+                  </apply>
+                </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> TNF </ci>
+                  <apply>
+                    <divide/>
+                    <ci> TNF </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> TNF </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <apply>
@@ -1053,16 +1789,64 @@
                 <divide/>
                 <apply>
                   <plus/>
-                  <ci> NF_kB </ci>
-                  <ci> p65 </ci>
-                  <ci> cJun </ci>
+                  <apply>
+                    <divide/>
+                    <ci> NF_kB </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> NF_kB </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> p65 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> p65 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> cJun </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> cJun </ci>
+                    </apply>
+                  </apply>
                 </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> NF_kB </ci>
-                  <ci> p65 </ci>
-                  <ci> cJun </ci>
+                  <apply>
+                    <divide/>
+                    <ci> NF_kB </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> NF_kB </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> p65 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> p65 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> cJun </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> cJun </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <apply>
@@ -1091,11 +1875,27 @@
               <times/>
               <apply>
                 <divide/>
-                <ci> NF_kB </ci>
+                <apply>
+                  <divide/>
+                  <ci> NF_kB </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> NF_kB </ci>
+                  </apply>
+                </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> NF_kB </ci>
+                  <apply>
+                    <divide/>
+                    <ci> NF_kB </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> NF_kB </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <apply>
@@ -1168,14 +1968,46 @@
                 <divide/>
                 <apply>
                   <plus/>
-                  <ci> cJun </ci>
-                  <ci> p38 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> cJun </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> cJun </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> p38 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> p38 </ci>
+                    </apply>
+                  </apply>
                 </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> cJun </ci>
-                  <ci> p38 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> cJun </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> cJun </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> p38 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> p38 </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <apply>
@@ -1233,11 +2065,27 @@
               <times/>
               <apply>
                 <divide/>
-                <ci> STAT3 </ci>
+                <apply>
+                  <divide/>
+                  <ci> STAT3 </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> STAT3 </ci>
+                  </apply>
+                </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> STAT3 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> STAT3 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> STAT3 </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <cn type="integer"> 1 </cn>
@@ -1254,11 +2102,27 @@
               <times/>
               <apply>
                 <divide/>
-                <ci> STAT3 </ci>
+                <apply>
+                  <divide/>
+                  <ci> STAT3 </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> STAT3 </ci>
+                  </apply>
+                </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> STAT3 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> STAT3 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> STAT3 </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <apply>
@@ -1314,14 +2178,46 @@
                 <divide/>
                 <apply>
                   <plus/>
-                  <ci> IL_1beta </ci>
-                  <ci> ERK </ci>
+                  <apply>
+                    <divide/>
+                    <ci> IL_1beta </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IL_1beta </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> ERK </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> ERK </ci>
+                    </apply>
+                  </apply>
                 </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> IL_1beta </ci>
-                  <ci> ERK </ci>
+                  <apply>
+                    <divide/>
+                    <ci> IL_1beta </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IL_1beta </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> ERK </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> ERK </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <apply>
@@ -1352,14 +2248,46 @@
                 <divide/>
                 <apply>
                   <plus/>
-                  <ci> cJun </ci>
-                  <ci> SMAD2_3 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> cJun </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> cJun </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> SMAD2_3 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> SMAD2_3 </ci>
+                    </apply>
+                  </apply>
                 </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> cJun </ci>
-                  <ci> SMAD2_3 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> cJun </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> cJun </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> SMAD2_3 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> SMAD2_3 </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <cn type="integer"> 1 </cn>
@@ -1376,11 +2304,27 @@
               <times/>
               <apply>
                 <divide/>
-                <ci> TGF_beta </ci>
+                <apply>
+                  <divide/>
+                  <ci> TGF_beta </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> TGF_beta </ci>
+                  </apply>
+                </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> TGF_beta </ci>
+                  <apply>
+                    <divide/>
+                    <ci> TGF_beta </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> TGF_beta </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <cn type="integer"> 1 </cn>
@@ -1399,14 +2343,46 @@
                 <divide/>
                 <apply>
                   <plus/>
-                  <ci> TNF </ci>
-                  <ci> IkBalpha </ci>
+                  <apply>
+                    <divide/>
+                    <ci> TNF </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> TNF </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> IkBalpha </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IkBalpha </ci>
+                    </apply>
+                  </apply>
                 </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> TNF </ci>
-                  <ci> IkBalpha </ci>
+                  <apply>
+                    <divide/>
+                    <ci> TNF </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> TNF </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> IkBalpha </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IkBalpha </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <apply>
@@ -1453,14 +2429,46 @@
                 <divide/>
                 <apply>
                   <plus/>
-                  <ci> IL_1R1 </ci>
-                  <ci> TNFR1 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> IL_1R1 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IL_1R1 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> TNFR1 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> TNFR1 </ci>
+                    </apply>
+                  </apply>
                 </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> IL_1R1 </ci>
-                  <ci> TNFR1 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> IL_1R1 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IL_1R1 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> TNFR1 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> TNFR1 </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <apply>
@@ -1489,11 +2497,27 @@
               <times/>
               <apply>
                 <divide/>
-                <ci> IL_1R1 </ci>
+                <apply>
+                  <divide/>
+                  <ci> IL_1R1 </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> IL_1R1 </ci>
+                  </apply>
+                </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> IL_1R1 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> IL_1R1 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IL_1R1 </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <cn type="integer"> 1 </cn>
@@ -1512,20 +2536,100 @@
                 <divide/>
                 <apply>
                   <plus/>
-                  <ci> TGFBRI </ci>
-                  <ci> IGF1R </ci>
-                  <ci> IL_1R1 </ci>
-                  <ci> TNFR1 </ci>
-                  <ci> JNK </ci>
+                  <apply>
+                    <divide/>
+                    <ci> TGFBRI </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> TGFBRI </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> IGF1R </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IGF1R </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> IL_1R1 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IL_1R1 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> TNFR1 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> TNFR1 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> JNK </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> JNK </ci>
+                    </apply>
+                  </apply>
                 </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> TGFBRI </ci>
-                  <ci> IGF1R </ci>
-                  <ci> IL_1R1 </ci>
-                  <ci> TNFR1 </ci>
-                  <ci> JNK </ci>
+                  <apply>
+                    <divide/>
+                    <ci> TGFBRI </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> TGFBRI </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> IGF1R </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IGF1R </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> IL_1R1 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IL_1R1 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> TNFR1 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> TNFR1 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> JNK </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> JNK </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <cn type="integer"> 1 </cn>
@@ -1544,16 +2648,64 @@
                 <divide/>
                 <apply>
                   <plus/>
-                  <ci> IL_1R1 </ci>
-                  <ci> IL_17R </ci>
-                  <ci> TNFR1 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> IL_1R1 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IL_1R1 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> IL_17R </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IL_17R </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> TNFR1 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> TNFR1 </ci>
+                    </apply>
+                  </apply>
                 </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> IL_1R1 </ci>
-                  <ci> IL_17R </ci>
-                  <ci> TNFR1 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> IL_1R1 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IL_1R1 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> IL_17R </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IL_17R </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> TNFR1 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> TNFR1 </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <cn type="integer"> 1 </cn>
@@ -1570,11 +2722,27 @@
               <times/>
               <apply>
                 <divide/>
-                <ci> TNF </ci>
+                <apply>
+                  <divide/>
+                  <ci> TNF </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> TNF </ci>
+                  </apply>
+                </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> TNF </ci>
+                  <apply>
+                    <divide/>
+                    <ci> TNF </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> TNF </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <cn type="integer"> 1 </cn>
@@ -1593,18 +2761,82 @@
                 <divide/>
                 <apply>
                   <plus/>
-                  <ci> IL_1R1 </ci>
-                  <ci> IL_17R </ci>
-                  <ci> TNF </ci>
-                  <ci> TNFR1 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> IL_1R1 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IL_1R1 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> IL_17R </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IL_17R </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> TNF </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> TNF </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> TNFR1 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> TNFR1 </ci>
+                    </apply>
+                  </apply>
                 </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> IL_1R1 </ci>
-                  <ci> IL_17R </ci>
-                  <ci> TNF </ci>
-                  <ci> TNFR1 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> IL_1R1 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IL_1R1 </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> IL_17R </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IL_17R </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> TNF </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> TNF </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> TNFR1 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> TNFR1 </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <apply>
@@ -1635,14 +2867,46 @@
                 <divide/>
                 <apply>
                   <plus/>
-                  <ci> TGF_beta </ci>
-                  <ci> IGF1R </ci>
+                  <apply>
+                    <divide/>
+                    <ci> TGF_beta </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> TGF_beta </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> IGF1R </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IGF1R </ci>
+                    </apply>
+                  </apply>
                 </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> TGF_beta </ci>
-                  <ci> IGF1R </ci>
+                  <apply>
+                    <divide/>
+                    <ci> TGF_beta </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> TGF_beta </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> IGF1R </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IGF1R </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <apply>
@@ -1673,14 +2937,46 @@
                 <divide/>
                 <apply>
                   <plus/>
-                  <ci> TGFBRI </ci>
-                  <ci> akt1 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> TGFBRI </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> TGFBRI </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> akt1 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> akt1 </ci>
+                    </apply>
+                  </apply>
                 </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> TGFBRI </ci>
-                  <ci> akt1 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> TGFBRI </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> TGFBRI </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> akt1 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> akt1 </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <cn type="integer"> 1 </cn>
@@ -1710,11 +3006,27 @@
               <times/>
               <apply>
                 <divide/>
-                <ci> IFN_gammaR </ci>
+                <apply>
+                  <divide/>
+                  <ci> IFN_gammaR </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> IFN_gammaR </ci>
+                  </apply>
+                </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> IFN_gammaR </ci>
+                  <apply>
+                    <divide/>
+                    <ci> IFN_gammaR </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IFN_gammaR </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <cn type="integer"> 1 </cn>
@@ -1769,11 +3081,27 @@
               <times/>
               <apply>
                 <divide/>
-                <ci> JAK </ci>
+                <apply>
+                  <divide/>
+                  <ci> JAK </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> JAK </ci>
+                  </apply>
+                </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> JAK </ci>
+                  <apply>
+                    <divide/>
+                    <ci> JAK </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> JAK </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <cn type="integer"> 1 </cn>
@@ -1792,14 +3120,46 @@
                 <divide/>
                 <apply>
                   <plus/>
-                  <ci> TGFBRI </ci>
-                  <ci> ERK </ci>
+                  <apply>
+                    <divide/>
+                    <ci> TGFBRI </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> TGFBRI </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> ERK </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> ERK </ci>
+                    </apply>
+                  </apply>
                 </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> TGFBRI </ci>
-                  <ci> ERK </ci>
+                  <apply>
+                    <divide/>
+                    <ci> TGFBRI </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> TGFBRI </ci>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <divide/>
+                    <ci> ERK </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> ERK </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <cn type="integer"> 1 </cn>
@@ -1829,11 +3189,27 @@
               <times/>
               <apply>
                 <divide/>
-                <ci> TNFR1 </ci>
+                <apply>
+                  <divide/>
+                  <ci> TNFR1 </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> TNFR1 </ci>
+                  </apply>
+                </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> TNFR1 </ci>
+                  <apply>
+                    <divide/>
+                    <ci> TNFR1 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> TNFR1 </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <apply>
@@ -1878,11 +3254,27 @@
               <times/>
               <apply>
                 <divide/>
-                <ci> wnt5a </ci>
+                <apply>
+                  <divide/>
+                  <ci> wnt5a </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> wnt5a </ci>
+                  </apply>
+                </apply>
                 <apply>
                   <plus/>
                   <cn type="integer"> 1 </cn>
-                  <ci> wnt5a </ci>
+                  <apply>
+                    <divide/>
+                    <ci> wnt5a </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> wnt5a </ci>
+                    </apply>
+                  </apply>
                 </apply>
               </apply>
               <cn type="integer"> 1 </cn>

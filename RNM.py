@@ -3,7 +3,52 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
+# Function to create an Antimony model
+def sanitize_name(name):
+    # Replace special characters with underscore
+    return name.replace("-", "_").replace("/", "_").replace("β", "beta").replace("γ", "gamma").replace("α", "alpha")
+
+
 # Function to Create Matrices from Excel
+def createAntimonyModel(Mact, Minh, NodeNames, Clamped):
+    model_str = 'model networkODE()\n'
+    
+    NumOfNodes = len(NodeNames)  # Calculate the number of nodes
+    
+    # Sanitize and define nodes as species in the model
+    NodeNames = [sanitize_name(name) for name in NodeNames]
+    
+    for name in NodeNames:
+        model_str += f'    var {name};\n'  # Declare variables
+        model_str += f'    {name} = 1;  // Initial condition\n'
+    
+    model_str += '\n'
+    
+    # Add ODEs for each node based on activators and inhibitors
+    for i, node in enumerate(NodeNames):
+        activator_indices = np.where(Mact[i] == 1)[0]
+        inhibitor_indices = np.where(Minh[i] == 1)[0]
+
+        activation_str = ' + '.join([f'({NodeNames[j]} / (1 + {NodeNames[j]}))' for j in activator_indices])
+        inhibition_str = ' + '.join([f'(1 - {NodeNames[j]} / (1 + {NodeNames[j]}))' for j in inhibitor_indices])
+
+        if activator_indices.size > 0:
+            activation_str = f'({activation_str}) / (1 + {activation_str})'
+        else:
+            activation_str = '0'
+
+        if inhibitor_indices.size > 0:
+            inhibition_str = f'({inhibition_str})'
+        else:
+            inhibition_str = '1'
+
+        model_str += f'    {node}\' = {activation_str} * {inhibition_str} - {node};\n'
+
+    model_str += 'end'
+    
+    return model_str
+
+# Load data and matrices
 def CreateMatrices(filename='CRT.xlsx'):
     df = pd.read_excel(filename)
     NodeNames = df['Nodes'].tolist()
@@ -25,47 +70,6 @@ def CreateMatrices(filename='CRT.xlsx'):
                 Minh[i, NodeNames.index(inh)] = 1
 
     return Mact, Minh, NodeNames, Clamped
-
-# Function to create an Antimony model
-def sanitize_name(name):
-    # Replace special characters with underscore
-    return name.replace("-", "_").replace("/", "_").replace("β", "beta").replace("γ", "gamma").replace("α", "alpha")
-
-def createAntimonyModel(Mact, Minh, NodeNames, Clamped):
-    model_str = 'model networkODE()\n'
-    
-    # Sanitize and define nodes as species in the model
-    NodeNames = [sanitize_name(name) for name in NodeNames]
-    
-    for name in NodeNames:
-        model_str += f'    var {name};\n'  # Declare variables
-        model_str += f'    {name} = 1;  // Initial condition\n'
-    
-    model_str += '\n'
-    
-    # Add ODEs for each node based on activators and inhibitors
-    for i, node in enumerate(NodeNames):
-        activator_indices = np.where(Mact[i] == 1)[0]
-        inhibitor_indices = np.where(Minh[i] == 1)[0]
-
-        activation_str = ' + '.join([f'{NodeNames[j]}' for j in activator_indices])
-        inhibition_str = ' + '.join([f'(1 - {NodeNames[j]} / (1 + {NodeNames[j]}))' for j in inhibitor_indices])
-
-        if activator_indices.size > 0:
-            activation_str = f'({activation_str}) / (1 + {activation_str})'
-        else:
-            activation_str = '0'
-
-        if inhibitor_indices.size > 0:
-            inhibition_str = f'({inhibition_str})'
-        else:
-            inhibition_str = '1'
-
-        model_str += f'    {node}\' = {activation_str} * {inhibition_str} - {node};\n'
-
-    model_str += 'end'
-    
-    return model_str
 
 # Main execution block
 if __name__ == "__main__":
@@ -134,3 +138,5 @@ if __name__ == "__main__":
         sbml_file.write(sbml_model)
     print("SBML model exported and plots saved successfully.")
 
+
+    
