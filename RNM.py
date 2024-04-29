@@ -1,60 +1,11 @@
-import numpy as np
 import tellurium as te
-import matplotlib.pyplot as plt
-import os
-import libsbml
-import pygraphviz as pgv
+import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
 
-def ODESysFun(t, X):
-    # Parameter Definition
-    NumOfNodes = len(X)
-    gamma = np.ones(NumOfNodes)
-    h = 10  # Steepness of activation
-    Mact, Minh, Clamped = CreateMatrices()
-
-    w = np.zeros(NumOfNodes)
-    f = np.zeros(NumOfNodes)
-
-    # Calculation of ODEs from activation and inhibition matrices
-    for i in range(NumOfNodes):
-        Ract = Mact[i]
-        Rinh = Minh[i]
-
-        if (np.any(Rinh) == 0 and np.any(Ract) == 1):  # Node i has no inhibitors and at least 1 activator
-            sum_alpha = np.sum(Ract)
-            sum_alpha_X = np.dot(Ract, X)
-
-            w[i] = ((1 + sum_alpha) / sum_alpha) * (sum_alpha_X / (1 + sum_alpha_X))
-
-        elif (np.any(Ract) == 0 and np.any(Rinh) == 1):  # Node i has no activators and at least 1 inhibitor
-            sum_beta = np.sum(Rinh)
-            sum_beta_X = np.dot(Rinh, X)
-
-            w[i] = 1 - ((1 + sum_beta) / sum_beta) * (sum_beta_X / (1 + sum_beta_X))
-
-        elif (np.any(Ract) == 1 and np.any(Rinh) == 1):  # Node i has inhibitors and activators
-            sum_alpha = np.sum(Ract)
-            sum_beta = np.sum(Rinh)
-
-            sum_alpha_X = np.dot(Ract, X)
-            sum_beta_X = np.dot(Rinh, X)
-
-            w[i] = ((1 + sum_alpha) / sum_alpha) * (sum_alpha_X / (1 + sum_alpha_X)) * (
-                        1 - ((1 + sum_beta) / sum_beta) * (sum_beta_X / (1 + sum_beta_X)))
-        else:
-            w[i] = 0
-
-        f[i] = (-np.exp(0.5 * h) + np.exp(-h * (w[i] - 0.5))) / ((1 - np.exp(0.5 * h)) * (1 + np.exp(-h * (w[i] - 0.5)))) - gamma[i] * X[i]
-        if Clamped[i] == 1:
-            f[i] = 0
-
-    return f
-
-def CreateMatrices():
-    # Read data from CRT.xlsx file
-    df = pd.read_excel('CRT.xlsx')
-
+# Function to Create Matrices from Excel
+def CreateMatrices(filename='CRT.xlsx'):
+    df = pd.read_excel(filename)
     NodeNames = df['Nodes'].tolist()
     NumOfNodes = len(NodeNames)
     Mact = np.zeros((NumOfNodes, NumOfNodes))
@@ -66,75 +17,122 @@ def CreateMatrices():
         inhibitors = str(row['Inhibitors']).split(',')
 
         for act in activators:
-            if act:
+            if act in NodeNames:
                 Mact[i, NodeNames.index(act)] = 1
 
         for inh in inhibitors:
-            if inh:
+            if inh in NodeNames:
                 Minh[i, NodeNames.index(inh)] = 1
 
-    return Mact, Minh, Clamped
+    return Mact, Minh, NodeNames, Clamped
 
-# Solve the ODE system
-t = np.linspace(0, 30, 100)  # Time points
-Xinit = np.random.rand(61)
-r = te.loada('')  # Load your model here
-result = r.simulate(0, 30, 100)
-Xout = result[:, 1:]  # Get simulation results for species only
+# Function to create an Antimony model
+def sanitize_name(name):
+    # Replace special characters with underscore
+    return name.replace("-", "_").replace("/", "_").replace("β", "beta").replace("γ", "gamma").replace("α", "alpha")
 
-# Plot the results
-pro_infl = [0, 1, 2]  # Indices of nodes for pro-inflammatory factors
-anti_infl = [3]  # Indices of nodes for anti-inflammatory factors
-growth = [10]  # Indices of nodes for growth factors
-ecm_destr = [0, 1]  # Indices of nodes for ECM destruction factors
-ecm_genesis = [2]  # Indices of nodes for ECM synthesis factors
-hypertrophy = [50]  # Indices of nodes for hypertrophy
+def createAntimonyModel(Mact, Minh, NodeNames, Clamped):
+    model_str = 'model networkODE()\n'
+    
+    # Sanitize and define nodes as species in the model
+    NodeNames = [sanitize_name(name) for name in NodeNames]
+    
+    for name in NodeNames:
+        model_str += f'    var {name};\n'  # Declare variables
+        model_str += f'    {name} = 1;  // Initial condition\n'
+    
+    model_str += '\n'
+    
+    # Add ODEs for each node based on activators and inhibitors
+    for i, node in enumerate(NodeNames):
+        activator_indices = np.where(Mact[i] == 1)[0]
+        inhibitor_indices = np.where(Minh[i] == 1)[0]
 
-plt.figure(figsize=(14, 10))
+        activation_str = ' + '.join([f'{NodeNames[j]}' for j in activator_indices])
+        inhibition_str = ' + '.join([f'(1 - {NodeNames[j]} / (1 + {NodeNames[j]}))' for j in inhibitor_indices])
 
-print("Simulation Results:")
-print(result)
+        if activator_indices.size > 0:
+            activation_str = f'({activation_str}) / (1 + {activation_str})'
+        else:
+            activation_str = '0'
 
-print("Species Concentrations:")
-print(Xout)
+        if inhibitor_indices.size > 0:
+            inhibition_str = f'({inhibition_str})'
+        else:
+            inhibition_str = '1'
 
+        model_str += f'    {node}\' = {activation_str} * {inhibition_str} - {node};\n'
 
-plt.subplot(2, 3, 1)
-plt.plot(result[:, 0], Xout[:, pro_infl])
-plt.title('Pro-Inflammatory')
-plt.xlabel('Time')
-plt.ylabel('Concentration')
-plt.legend(['Pro-Inflammatory'])
+    model_str += 'end'
+    
+    return model_str
 
-# Plot other subplots similarly
+# Main execution block
+if __name__ == "__main__":
+    # Load data and matrices
+    Mact, Minh, NodeNames, Clamped = CreateMatrices()
 
-plt.tight_layout()
+    # Generate the Antimony model string
+    antimony_model = createAntimonyModel(Mact, Minh, NodeNames, Clamped)
 
-# Save the plots
-plt.savefig('plot.png')
+    print("Generated Antimony Model:")
+    print(antimony_model)
 
-# Export the model to SBML
-r.exportToSBML('network_model.sbml')
+    # Load the model in roadrunner
+    try:
+        r = te.loada(antimony_model)
+        print("Model loaded successfully.")
+        # Continue with simulation setup and plotting...
+    except Exception as e:
+        print("Failed to load the model:", str(e))
+    
+    r.reset()  # Reset the model to initial conditions
 
-# Attempt to draw the network
-try:
-    sbml_document = libsbml.readSBMLFromFile('network_model.sbml')
-    sbml_model = sbml_document.getModel()
-    graph = pgv.AGraph(strict=False, directed=True)
+    # Define simulation parameters
+    start_time = 0
+    end_time = 30
+    num_points = 100
 
-    # Populate the graph with nodes (species) and edges (reactions)
-    for species in sbml_model.getListOfSpecies():
-        graph.add_node(species.getId(), label=species.getName())
+    # Simulate the model
+    results = r.simulate(start_time, end_time, num_points)
 
-    for reaction in sbml_model.getListOfReactions():
-        for reactant in reaction.getListOfReactants():
-            for product in reaction.getListOfProducts():
-                graph.add_edge(reactant.getSpecies(), product.getSpecies())
+    # Correct indexing - MATLAB to Python (MATLAB 1-based, Python 0-based)
+    # Define node groups for plotting based on earlier MATLAB indices adjusted for Python
+    pro_inflammatory = ['IL6', 'TNFa', 'IL1b']  # Example names, check your actual node names
+    anti_inflammatory = ['IL4', 'IL10']
+    growth_factors = ['BMP2', 'FGF2', 'TGFB1']
+    ecm_destruction = ['ADAMTS4', 'MMP1', 'MMP3', 'MMP13']
+    ecm_synthesis = ['ACAN', 'COL2A1']
+    hypertrophy = ['COL10A1', 'MMP13']  # Placeholder names
 
-    # Apply layout and save the graph
-    graph.layout(prog='dot')  # 'dot' layout for directed graphs
-    graph.draw('network_visualization.png')
+    # Plot results
+    plt.figure(figsize=(12, 8))
 
-    print("Network visualization saved as 'network_visualization.png'.")
-except Exception as e:
-    print("Failed to draw network graph:", str(e))
+    def plot_group(index, group, title, filename):
+        plt.subplot(2, 3, index)
+        for node in group:
+            if node in results.colnames:
+                plt.plot(results['time'], results[node], label=node)
+        plt.title(title)
+        plt.xlabel('Time')
+        plt.ylabel('Concentration')
+        plt.legend()
+        plt.savefig(filename)  # Save each plot to a file
+
+    plot_group(1, pro_inflammatory, 'Pro-Inflammatory', 'pro_inflammatory.png')
+    plot_group(2, anti_inflammatory, 'Anti-Inflammatory', 'anti_inflammatory.png')
+    plot_group(3, growth_factors, 'Growth Factors', 'growth_factors.png')
+    plot_group(4, ecm_destruction, 'ECM Destruction', 'ecm_destruction.png')
+    plot_group(5, ecm_synthesis, 'ECM Synthesis', 'ecm_synthesis.png')
+    plot_group(6, hypertrophy, 'Hypertrophy', 'hypertrophy.png')
+
+    plt.tight_layout()
+    plt.show()
+
+    # Export the model to SBML
+    sbml_model = r.getSBML()
+    sbml_path = 'model.sbml'
+    with open(sbml_path, 'w') as sbml_file:
+        sbml_file.write(sbml_model)
+
+    print(f"SBML model exported successfully to {sbml_path}.")

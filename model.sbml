@@ -1,0 +1,1896 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version2/core" level="3" version="2">
+  <model metaid="networkODE" id="networkODE">
+    <listOfParameters>
+      <parameter id="DBP" value="1" constant="false"/>
+      <parameter id="ROR" value="1" constant="false"/>
+      <parameter id="BMAL1" value="1" constant="false"/>
+      <parameter id="NFIL3" value="1" constant="false"/>
+      <parameter id="REV_ERB" value="1" constant="false"/>
+      <parameter id="PER" value="1" constant="false"/>
+      <parameter id="CRY" value="1" constant="false"/>
+      <parameter id="AMPK" value="1" constant="false"/>
+      <parameter id="FBXL3" value="1" constant="false"/>
+      <parameter id="FBXL21" value="1" constant="false"/>
+      <parameter id="CREB" value="1" constant="false"/>
+      <parameter id="TGF_beta" value="1" constant="false"/>
+      <parameter id="COL2A" value="1" constant="false"/>
+      <parameter id="COL1A" value="1" constant="false"/>
+      <parameter id="ACAN" value="1" constant="false"/>
+      <parameter id="TGFBRI" value="1" constant="false"/>
+      <parameter id="IGF1" value="1" constant="false"/>
+      <parameter id="IGF1R" value="1" constant="false"/>
+      <parameter id="GDF5" value="1" constant="false"/>
+      <parameter id="IL_10" value="1" constant="false"/>
+      <parameter id="IL_10R1" value="1" constant="false"/>
+      <parameter id="IL_4" value="1" constant="false"/>
+      <parameter id="IL_4R" value="1" constant="false"/>
+      <parameter id="IL_1beta" value="1" constant="false"/>
+      <parameter id="IL_1R1" value="1" constant="false"/>
+      <parameter id="IL_6" value="1" constant="false"/>
+      <parameter id="IL_6R" value="1" constant="false"/>
+      <parameter id="IL_17" value="1" constant="false"/>
+      <parameter id="IL_17R" value="1" constant="false"/>
+      <parameter id="IL_1RA" value="1" constant="false"/>
+      <parameter id="IFN_gamma" value="1" constant="false"/>
+      <parameter id="IFN_gammaR" value="1" constant="false"/>
+      <parameter id="TNF" value="1" constant="false"/>
+      <parameter id="TNFR1" value="1" constant="false"/>
+      <parameter id="ADAMTS4_5" value="1" constant="false"/>
+      <parameter id="MMP13" value="1" constant="false"/>
+      <parameter id="MMP3" value="1" constant="false"/>
+      <parameter id="VEGF" value="1" constant="false"/>
+      <parameter id="iNos" value="1" constant="false"/>
+      <parameter id="Cox2" value="1" constant="false"/>
+      <parameter id="CCL3_4" value="1" constant="false"/>
+      <parameter id="TIMP3" value="1" constant="false"/>
+      <parameter id="CCN2" value="1" constant="false"/>
+      <parameter id="NF_kB" value="1" constant="false"/>
+      <parameter id="p65" value="1" constant="false"/>
+      <parameter id="IkBalpha" value="1" constant="false"/>
+      <parameter id="ERK" value="1" constant="false"/>
+      <parameter id="cJun" value="1" constant="false"/>
+      <parameter id="JNK" value="1" constant="false"/>
+      <parameter id="p38" value="1" constant="false"/>
+      <parameter id="akt1" value="1" constant="false"/>
+      <parameter id="Sox9" value="1" constant="false"/>
+      <parameter id="JAK" value="1" constant="false"/>
+      <parameter id="STAT1" value="1" constant="false"/>
+      <parameter id="STAT3" value="1" constant="false"/>
+      <parameter id="STAT4" value="1" constant="false"/>
+      <parameter id="STAT6" value="1" constant="false"/>
+      <parameter id="SMAD2_3" value="1" constant="false"/>
+      <parameter id="SMAD1_5_8_4" value="1" constant="false"/>
+      <parameter id="wnt5a" value="1" constant="false"/>
+      <parameter id="beta_catenin" value="1" constant="false"/>
+    </listOfParameters>
+    <listOfRules>
+      <rateRule variable="DBP">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <ci> BMAL1 </ci>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> BMAL1 </ci>
+                </apply>
+              </apply>
+              <cn type="integer"> 1 </cn>
+            </apply>
+            <ci> DBP </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="ROR">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <apply>
+                  <plus/>
+                  <ci> DBP </ci>
+                  <ci> NFIL3 </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> DBP </ci>
+                  <ci> NFIL3 </ci>
+                </apply>
+              </apply>
+              <cn type="integer"> 1 </cn>
+            </apply>
+            <ci> ROR </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="BMAL1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <apply>
+                  <plus/>
+                  <ci> ROR </ci>
+                  <ci> TGF_beta </ci>
+                  <ci> IL_1RA </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> ROR </ci>
+                  <ci> TGF_beta </ci>
+                  <ci> IL_1RA </ci>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <apply>
+                  <minus/>
+                  <cn type="integer"> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <ci> REV_ERB </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> REV_ERB </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <minus/>
+                  <cn type="integer"> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <ci> PER </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> PER </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <minus/>
+                  <cn type="integer"> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <ci> CRY </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> CRY </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <minus/>
+                  <cn type="integer"> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <ci> NF_kB </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> NF_kB </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+            <ci> BMAL1 </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="NFIL3">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <ci> ROR </ci>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> ROR </ci>
+                </apply>
+              </apply>
+              <cn type="integer"> 1 </cn>
+            </apply>
+            <ci> NFIL3 </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="REV_ERB">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <apply>
+                  <plus/>
+                  <ci> BMAL1 </ci>
+                  <ci> IL_1RA </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> BMAL1 </ci>
+                  <ci> IL_1RA </ci>
+                </apply>
+              </apply>
+              <apply>
+                <minus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> NF_kB </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> NF_kB </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+            <ci> REV_ERB </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="PER">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <apply>
+                  <plus/>
+                  <ci> BMAL1 </ci>
+                  <ci> CREB </ci>
+                  <ci> IL_1RA </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> BMAL1 </ci>
+                  <ci> CREB </ci>
+                  <ci> IL_1RA </ci>
+                </apply>
+              </apply>
+              <apply>
+                <minus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> NF_kB </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> NF_kB </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+            <ci> PER </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="CRY">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <ci> BMAL1 </ci>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> BMAL1 </ci>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <apply>
+                  <minus/>
+                  <cn type="integer"> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <ci> AMPK </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> AMPK </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <minus/>
+                  <cn type="integer"> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <ci> FBXL21 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> FBXL21 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+            <ci> CRY </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="AMPK">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <ci> FBXL3 </ci>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> FBXL3 </ci>
+                </apply>
+              </apply>
+              <cn type="integer"> 1 </cn>
+            </apply>
+            <ci> AMPK </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="FBXL3">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <cn type="integer"> 0 </cn>
+              <apply>
+                <minus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> FBXL21 </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> FBXL21 </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+            <ci> FBXL3 </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="FBXL21">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <cn type="integer"> 0 </cn>
+              <cn type="integer"> 1 </cn>
+            </apply>
+            <ci> FBXL21 </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="CREB">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <apply>
+                  <plus/>
+                  <ci> p38 </ci>
+                  <ci> akt1 </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> p38 </ci>
+                  <ci> akt1 </ci>
+                </apply>
+              </apply>
+              <cn type="integer"> 1 </cn>
+            </apply>
+            <ci> CREB </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="TGF_beta">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <apply>
+                  <plus/>
+                  <ci> cJun </ci>
+                  <ci> beta_catenin </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> cJun </ci>
+                  <ci> beta_catenin </ci>
+                </apply>
+              </apply>
+              <cn type="integer"> 1 </cn>
+            </apply>
+            <ci> TGF_beta </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="COL2A">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <apply>
+                  <plus/>
+                  <ci> TGF_beta </ci>
+                  <ci> GDF5 </ci>
+                  <ci> IL_1RA </ci>
+                  <ci> cJun </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> TGF_beta </ci>
+                  <ci> GDF5 </ci>
+                  <ci> IL_1RA </ci>
+                  <ci> cJun </ci>
+                </apply>
+              </apply>
+              <apply>
+                <minus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> TNF </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> TNF </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+            <ci> COL2A </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="COL1A">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <ci> IL_1RA </ci>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> IL_1RA </ci>
+                </apply>
+              </apply>
+              <apply>
+                <minus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> cJun </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> cJun </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+            <ci> COL1A </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="ACAN">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <apply>
+                  <plus/>
+                  <ci> TGF_beta </ci>
+                  <ci> GDF5 </ci>
+                  <ci> IL_1RA </ci>
+                  <ci> cJun </ci>
+                  <ci> Sox9 </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> TGF_beta </ci>
+                  <ci> GDF5 </ci>
+                  <ci> IL_1RA </ci>
+                  <ci> cJun </ci>
+                  <ci> Sox9 </ci>
+                </apply>
+              </apply>
+              <apply>
+                <minus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> TNF </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> TNF </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+            <ci> ACAN </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="TGFBRI">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <apply>
+                  <plus/>
+                  <ci> TGF_beta </ci>
+                  <ci> cJun </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> TGF_beta </ci>
+                  <ci> cJun </ci>
+                </apply>
+              </apply>
+              <cn type="integer"> 1 </cn>
+            </apply>
+            <ci> TGFBRI </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="IGF1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <apply>
+                  <plus/>
+                  <ci> MMP13 </ci>
+                  <ci> MMP3 </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> MMP13 </ci>
+                  <ci> MMP3 </ci>
+                </apply>
+              </apply>
+              <cn type="integer"> 1 </cn>
+            </apply>
+            <ci> IGF1 </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="IGF1R">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <ci> IGF1 </ci>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> IGF1 </ci>
+                </apply>
+              </apply>
+              <cn type="integer"> 1 </cn>
+            </apply>
+            <ci> IGF1R </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="GDF5">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <ci> TGF_beta </ci>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> TGF_beta </ci>
+                </apply>
+              </apply>
+              <cn type="integer"> 1 </cn>
+            </apply>
+            <ci> GDF5 </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="IL_10">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <cn type="integer"> 0 </cn>
+              <cn type="integer"> 1 </cn>
+            </apply>
+            <ci> IL_10 </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="IL_10R1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <ci> IL_10 </ci>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> IL_10 </ci>
+                </apply>
+              </apply>
+              <cn type="integer"> 1 </cn>
+            </apply>
+            <ci> IL_10R1 </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="IL_4">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <cn type="integer"> 0 </cn>
+              <cn type="integer"> 1 </cn>
+            </apply>
+            <ci> IL_4 </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="IL_4R">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <ci> IL_4 </ci>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> IL_4 </ci>
+                </apply>
+              </apply>
+              <cn type="integer"> 1 </cn>
+            </apply>
+            <ci> IL_4R </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="IL_1beta">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <cn type="integer"> 0 </cn>
+              <apply>
+                <minus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> cJun </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> cJun </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+            <ci> IL_1beta </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="IL_1R1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <apply>
+                  <plus/>
+                  <ci> IL_1beta </ci>
+                  <ci> cJun </ci>
+                  <ci> JNK </ci>
+                  <ci> p38 </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> IL_1beta </ci>
+                  <ci> cJun </ci>
+                  <ci> JNK </ci>
+                  <ci> p38 </ci>
+                </apply>
+              </apply>
+              <cn type="integer"> 1 </cn>
+            </apply>
+            <ci> IL_1R1 </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="IL_6">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <ci> TGF_beta </ci>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> TGF_beta </ci>
+                </apply>
+              </apply>
+              <apply>
+                <minus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> cJun </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> cJun </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+            <ci> IL_6 </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="IL_6R">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <ci> IL_6 </ci>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> IL_6 </ci>
+                </apply>
+              </apply>
+              <cn type="integer"> 1 </cn>
+            </apply>
+            <ci> IL_6R </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="IL_17">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <cn type="integer"> 0 </cn>
+              <apply>
+                <minus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> cJun </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> cJun </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+            <ci> IL_17 </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="IL_17R">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <apply>
+                  <plus/>
+                  <ci> IL_17 </ci>
+                  <ci> TNFR1 </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> IL_17 </ci>
+                  <ci> TNFR1 </ci>
+                </apply>
+              </apply>
+              <apply>
+                <minus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> cJun </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> cJun </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+            <ci> IL_17R </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="IL_1RA">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <cn type="integer"> 0 </cn>
+              <cn type="integer"> 1 </cn>
+            </apply>
+            <ci> IL_1RA </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="IFN_gamma">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <cn type="integer"> 0 </cn>
+              <cn type="integer"> 1 </cn>
+            </apply>
+            <ci> IFN_gamma </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="IFN_gammaR">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <ci> IFN_gamma </ci>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> IFN_gamma </ci>
+                </apply>
+              </apply>
+              <cn type="integer"> 1 </cn>
+            </apply>
+            <ci> IFN_gammaR </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="TNF">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <cn type="integer"> 0 </cn>
+              <apply>
+                <plus/>
+                <apply>
+                  <minus/>
+                  <cn type="integer"> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <ci> IL_1RA </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IL_1RA </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <minus/>
+                  <cn type="integer"> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <ci> cJun </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> cJun </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+            <ci> TNF </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="TNFR1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <ci> TNF </ci>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> TNF </ci>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <apply>
+                  <minus/>
+                  <cn type="integer"> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <ci> cJun </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> cJun </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <minus/>
+                  <cn type="integer"> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <ci> wnt5a </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> wnt5a </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+            <ci> TNFR1 </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="ADAMTS4_5">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <apply>
+                  <plus/>
+                  <ci> NF_kB </ci>
+                  <ci> p65 </ci>
+                  <ci> cJun </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> NF_kB </ci>
+                  <ci> p65 </ci>
+                  <ci> cJun </ci>
+                </apply>
+              </apply>
+              <apply>
+                <minus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> IL_1RA </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> IL_1RA </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+            <ci> ADAMTS4_5 </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="MMP13">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <ci> NF_kB </ci>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> NF_kB </ci>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <apply>
+                  <minus/>
+                  <cn type="integer"> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <ci> IL_1RA </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IL_1RA </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <minus/>
+                  <cn type="integer"> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <ci> JNK </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> JNK </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <minus/>
+                  <cn type="integer"> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <ci> akt1 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> akt1 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <minus/>
+                  <cn type="integer"> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <ci> wnt5a </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> wnt5a </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+            <ci> MMP13 </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="MMP3">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <apply>
+                  <plus/>
+                  <ci> cJun </ci>
+                  <ci> p38 </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> cJun </ci>
+                  <ci> p38 </ci>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <apply>
+                  <minus/>
+                  <cn type="integer"> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <ci> IL_1RA </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> IL_1RA </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <minus/>
+                  <cn type="integer"> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <ci> akt1 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> akt1 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <minus/>
+                  <cn type="integer"> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <ci> wnt5a </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> wnt5a </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+            <ci> MMP3 </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="VEGF">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <ci> STAT3 </ci>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> STAT3 </ci>
+                </apply>
+              </apply>
+              <cn type="integer"> 1 </cn>
+            </apply>
+            <ci> VEGF </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="iNos">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <ci> STAT3 </ci>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> STAT3 </ci>
+                </apply>
+              </apply>
+              <apply>
+                <minus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> IL_1RA </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> IL_1RA </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+            <ci> iNos </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="Cox2">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <cn type="integer"> 0 </cn>
+              <apply>
+                <minus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> IL_1RA </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> IL_1RA </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+            <ci> Cox2 </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="CCL3_4">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <apply>
+                  <plus/>
+                  <ci> IL_1beta </ci>
+                  <ci> ERK </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> IL_1beta </ci>
+                  <ci> ERK </ci>
+                </apply>
+              </apply>
+              <apply>
+                <minus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> TGF_beta </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> TGF_beta </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+            <ci> CCL3_4 </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="TIMP3">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <apply>
+                  <plus/>
+                  <ci> cJun </ci>
+                  <ci> SMAD2_3 </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> cJun </ci>
+                  <ci> SMAD2_3 </ci>
+                </apply>
+              </apply>
+              <cn type="integer"> 1 </cn>
+            </apply>
+            <ci> TIMP3 </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="CCN2">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <ci> TGF_beta </ci>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> TGF_beta </ci>
+                </apply>
+              </apply>
+              <cn type="integer"> 1 </cn>
+            </apply>
+            <ci> CCN2 </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="NF_kB">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <apply>
+                  <plus/>
+                  <ci> TNF </ci>
+                  <ci> IkBalpha </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> TNF </ci>
+                  <ci> IkBalpha </ci>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <apply>
+                  <minus/>
+                  <cn type="integer"> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <ci> TGF_beta </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> TGF_beta </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <minus/>
+                  <cn type="integer"> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <ci> wnt5a </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> wnt5a </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+            <ci> NF_kB </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="p65">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <apply>
+                  <plus/>
+                  <ci> IL_1R1 </ci>
+                  <ci> TNFR1 </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> IL_1R1 </ci>
+                  <ci> TNFR1 </ci>
+                </apply>
+              </apply>
+              <apply>
+                <minus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> wnt5a </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> wnt5a </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+            <ci> p65 </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="IkBalpha">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <ci> IL_1R1 </ci>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> IL_1R1 </ci>
+                </apply>
+              </apply>
+              <cn type="integer"> 1 </cn>
+            </apply>
+            <ci> IkBalpha </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="ERK">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <apply>
+                  <plus/>
+                  <ci> TGFBRI </ci>
+                  <ci> IGF1R </ci>
+                  <ci> IL_1R1 </ci>
+                  <ci> TNFR1 </ci>
+                  <ci> JNK </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> TGFBRI </ci>
+                  <ci> IGF1R </ci>
+                  <ci> IL_1R1 </ci>
+                  <ci> TNFR1 </ci>
+                  <ci> JNK </ci>
+                </apply>
+              </apply>
+              <cn type="integer"> 1 </cn>
+            </apply>
+            <ci> ERK </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="cJun">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <apply>
+                  <plus/>
+                  <ci> IL_1R1 </ci>
+                  <ci> IL_17R </ci>
+                  <ci> TNFR1 </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> IL_1R1 </ci>
+                  <ci> IL_17R </ci>
+                  <ci> TNFR1 </ci>
+                </apply>
+              </apply>
+              <cn type="integer"> 1 </cn>
+            </apply>
+            <ci> cJun </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="JNK">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <ci> TNF </ci>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> TNF </ci>
+                </apply>
+              </apply>
+              <cn type="integer"> 1 </cn>
+            </apply>
+            <ci> JNK </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="p38">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <apply>
+                  <plus/>
+                  <ci> IL_1R1 </ci>
+                  <ci> IL_17R </ci>
+                  <ci> TNF </ci>
+                  <ci> TNFR1 </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> IL_1R1 </ci>
+                  <ci> IL_17R </ci>
+                  <ci> TNF </ci>
+                  <ci> TNFR1 </ci>
+                </apply>
+              </apply>
+              <apply>
+                <minus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> IL_10R1 </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> IL_10R1 </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+            <ci> p38 </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="akt1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <apply>
+                  <plus/>
+                  <ci> TGF_beta </ci>
+                  <ci> IGF1R </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> TGF_beta </ci>
+                  <ci> IGF1R </ci>
+                </apply>
+              </apply>
+              <apply>
+                <minus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> IL_1R1 </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> IL_1R1 </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+            <ci> akt1 </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="Sox9">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <apply>
+                  <plus/>
+                  <ci> TGFBRI </ci>
+                  <ci> akt1 </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> TGFBRI </ci>
+                  <ci> akt1 </ci>
+                </apply>
+              </apply>
+              <cn type="integer"> 1 </cn>
+            </apply>
+            <ci> Sox9 </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="JAK">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <cn type="integer"> 0 </cn>
+              <cn type="integer"> 1 </cn>
+            </apply>
+            <ci> JAK </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="STAT1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <ci> IFN_gammaR </ci>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> IFN_gammaR </ci>
+                </apply>
+              </apply>
+              <cn type="integer"> 1 </cn>
+            </apply>
+            <ci> STAT1 </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="STAT3">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <cn type="integer"> 0 </cn>
+              <apply>
+                <minus/>
+                <cn type="integer"> 1 </cn>
+                <apply>
+                  <divide/>
+                  <ci> IL_1R1 </ci>
+                  <apply>
+                    <plus/>
+                    <cn type="integer"> 1 </cn>
+                    <ci> IL_1R1 </ci>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+            <ci> STAT3 </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="STAT4">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <cn type="integer"> 0 </cn>
+              <cn type="integer"> 1 </cn>
+            </apply>
+            <ci> STAT4 </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="STAT6">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <ci> JAK </ci>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> JAK </ci>
+                </apply>
+              </apply>
+              <cn type="integer"> 1 </cn>
+            </apply>
+            <ci> STAT6 </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="SMAD2_3">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <apply>
+                  <plus/>
+                  <ci> TGFBRI </ci>
+                  <ci> ERK </ci>
+                </apply>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> TGFBRI </ci>
+                  <ci> ERK </ci>
+                </apply>
+              </apply>
+              <cn type="integer"> 1 </cn>
+            </apply>
+            <ci> SMAD2_3 </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="SMAD1_5_8_4">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <cn type="integer"> 0 </cn>
+              <cn type="integer"> 1 </cn>
+            </apply>
+            <ci> SMAD1_5_8_4 </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="wnt5a">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <ci> TNFR1 </ci>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> TNFR1 </ci>
+                </apply>
+              </apply>
+              <apply>
+                <plus/>
+                <apply>
+                  <minus/>
+                  <cn type="integer"> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <ci> TGF_beta </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> TGF_beta </ci>
+                    </apply>
+                  </apply>
+                </apply>
+                <apply>
+                  <minus/>
+                  <cn type="integer"> 1 </cn>
+                  <apply>
+                    <divide/>
+                    <ci> GDF5 </ci>
+                    <apply>
+                      <plus/>
+                      <cn type="integer"> 1 </cn>
+                      <ci> GDF5 </ci>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+            <ci> wnt5a </ci>
+          </apply>
+        </math>
+      </rateRule>
+      <rateRule variable="beta_catenin">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <minus/>
+            <apply>
+              <times/>
+              <apply>
+                <divide/>
+                <ci> wnt5a </ci>
+                <apply>
+                  <plus/>
+                  <cn type="integer"> 1 </cn>
+                  <ci> wnt5a </ci>
+                </apply>
+              </apply>
+              <cn type="integer"> 1 </cn>
+            </apply>
+            <ci> beta_catenin </ci>
+          </apply>
+        </math>
+      </rateRule>
+    </listOfRules>
+  </model>
+</sbml>
