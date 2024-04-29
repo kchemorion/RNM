@@ -82,7 +82,6 @@ if __name__ == "__main__":
     try:
         r = te.loada(antimony_model)
         print("Model loaded successfully.")
-        # Continue with simulation setup and plotting...
     except Exception as e:
         print("Failed to load the model:", str(e))
     
@@ -96,43 +95,42 @@ if __name__ == "__main__":
     # Simulate the model
     results = r.simulate(start_time, end_time, num_points)
 
-    # Correct indexing - MATLAB to Python (MATLAB 1-based, Python 0-based)
-    # Define node groups for plotting based on earlier MATLAB indices adjusted for Python
-    pro_inflammatory = ['IL6', 'TNFa', 'IL1b']  # Example names, check your actual node names
-    anti_inflammatory = ['IL4', 'IL10']
-    growth_factors = ['BMP2', 'FGF2', 'TGFB1']
-    ecm_destruction = ['ADAMTS4', 'MMP1', 'MMP3', 'MMP13']
-    ecm_synthesis = ['ACAN', 'COL2A1']
-    hypertrophy = ['COL10A1', 'MMP13']  # Placeholder names
+    # Node group definitions - assuming indices are accurate and NodeNames are correctly ordered
+    pro_inflammatory = [NodeNames[i] for i in [0, 1, 2]]  # Adjusted indices to Python's 0-based indexing
+    anti_inflammatory = [NodeNames[i] for i in [3]]
+    growth_factors = [NodeNames[i] for i in [9]]
+    ecm_destruction = [NodeNames[i] for i in [0, 1]]
+    ecm_synthesis = [NodeNames[i] for i in [2]]
+    hypertrophy = [NodeNames[i] for i in [49]]  # Adjust index for Python
 
-    # Plot results
-    plt.figure(figsize=(12, 8))
+    # Plotting results
+    plt.figure(figsize=(18, 10))
 
-    def plot_group(index, group, title, filename):
-        plt.subplot(2, 3, index)
+    # Helper function to plot each group
+    def plot_group(data, group, subplot_index, title):
+        plt.subplot(2, 3, subplot_index)
         for node in group:
-            if node in results.colnames:
-                plt.plot(results['time'], results[node], label=node)
+            if node in data.colnames:
+                plt.plot(data['time'], data[node], label=node)
         plt.title(title)
         plt.xlabel('Time')
-        plt.ylabel('Concentration')
+        plt.ylabel('Normalized Presence')
         plt.legend()
-        plt.savefig(filename)  # Save each plot to a file
+        plt.savefig(f"{title.replace(' ', '_').lower()}.png")  # Save figure to file
 
-    plot_group(1, pro_inflammatory, 'Pro-Inflammatory', 'pro_inflammatory.png')
-    plot_group(2, anti_inflammatory, 'Anti-Inflammatory', 'anti_inflammatory.png')
-    plot_group(3, growth_factors, 'Growth Factors', 'growth_factors.png')
-    plot_group(4, ecm_destruction, 'ECM Destruction', 'ecm_destruction.png')
-    plot_group(5, ecm_synthesis, 'ECM Synthesis', 'ecm_synthesis.png')
-    plot_group(6, hypertrophy, 'Hypertrophy', 'hypertrophy.png')
+    plot_group(results, pro_inflammatory, 1, 'Pro-Inflammatory')
+    plot_group(results, anti_inflammatory, 2, 'Anti-Inflammatory')
+    plot_group(results, growth_factors, 3, 'Growth Factors')
+    plot_group(results, ecm_destruction, 4, 'ECM Destruction')
+    plot_group(results, ecm_synthesis, 5, 'ECM Synthesis')
+    plot_group(results, hypertrophy, 6, 'Hypertrophy')
 
     plt.tight_layout()
     plt.show()
 
     # Export the model to SBML
     sbml_model = r.getSBML()
-    sbml_path = 'model.sbml'
-    with open(sbml_path, 'w') as sbml_file:
+    with open('model.sbml', 'w') as sbml_file:
         sbml_file.write(sbml_model)
+    print("SBML model exported and plots saved successfully.")
 
-    print(f"SBML model exported successfully to {sbml_path}.")
